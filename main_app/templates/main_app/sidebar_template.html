@@ -191,54 +191,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    {% url 'student_feedback_message' as student_feedback_message %}
 
-                    <a href="{{ student_feedback_message }}"
-                        class="nav-link  {% if student_feedback_message == request.path %} active {% endif %}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Student Feedback
-
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    {% url 'staff_feedback_message' as staff_feedback_message %}
-
-                    <a href="{{staff_feedback_message}}"
-                        class="nav-link   {% if staff_feedback_message == request.path %} active {% endif %}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Staff Feedback
-
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    {% url 'view_staff_leave' as view_staff_leave %}
-
-                    <a href="{{view_staff_leave}}"
-                        class="nav-link  {% if view_staff_leave == request.path %} active {% endif %}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Staff Leave
-
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    {% url 'view_student_leave' as view_student_leave %}
-
-                    <a href="{% url 'view_student_leave' %}"
-                        class="nav-link  {% if view_student_leave == request.path %} active {% endif %}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Student Leave
-
-                        </p>
-                    </a>
-                </li>
 
                 {% elif request.user.user_type == '2' %}
                 <!-- Brand Logo -->
