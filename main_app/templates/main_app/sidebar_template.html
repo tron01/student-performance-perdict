@@ -16,7 +16,7 @@
                 <img src="{{ request.user.profile_pic}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">{{user}}</a>
+                <a href="#" class="d-block">{{user.first_name}}&nbsp;{{user.last_name}}</a>
             </div>
         </div>
 
@@ -188,7 +188,7 @@
                             <img src="{{ request.user.profile_pic}}" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block">{{ user}}</a>
+                            <a href="#" class="d-block">{{user.first_name}}&nbsp;{{user.last_name}}</a>
                         </div>
                     </div>
 
@@ -265,40 +265,8 @@
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                {% url 'staff_view_notification' as staff_view_notification %}
-                                <a href=""
-                                    class="nav-link {% if staff_view_notification == request.path %} active {% endif %}">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        View Notifications
 
-                                    </p>
-                                </a>
-                            </li>
 
-                            <li class="nav-item">
-                                {% url 'staff_apply_leave' as staff_apply_leave %}
-                                <a href=""
-                                    class="nav-link {% if staff_apply_leave == request.path %} active {% endif %}">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        Apply For Leave
-
-                                    </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                {% url 'staff_feedback' as staff_feedback %}
-                                <a href="" class="nav-link {% if staff_feedback == request.path %} active {% endif %}">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        Feedback
-
-                                    </p>
-                                </a>
-                            </li>
 
                             {% else %}
                             <!-- Brand Logo -->
@@ -318,7 +286,7 @@
                                             alt="User Image">
                                     </div>
                                     <div class="info">
-                                        <a href="#" class="d-block">{{user}}</a>
+                                        <a href="#" class="d-block">{{user.first_name}}&nbsp;{{user.last_name}}</a>
                                     </div>
                                 </div>
 
@@ -371,41 +339,7 @@
                                             </a>
                                         </li>
 
-                                        <li class="nav-item">
-                                            {% url 'student_view_notification' as student_view_notification %}
-                                            <a href="{{student_view_notification}}"
-                                                class="nav-link {% if student_view_notification == request.path %} active {% endif %}">
-                                                <i class="nav-icon fas fa-th"></i>
-                                                <p>
-                                                    View Notifications
 
-                                                </p>
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            {% url 'student_apply_leave' as student_apply_leave %}
-                                            <a href="{{student_apply_leave}}"
-                                                class="nav-link {% if student_apply_leave == request.path %} active {% endif %}">
-                                                <i class="nav-icon fas fa-th"></i>
-                                                <p>
-                                                    Apply For Leave
-
-                                                </p>
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            {% url 'student_feedback' as student_feedback %}
-                                            <a href="{{student_feedback}}"
-                                                class="nav-link {% if student_feedback == request.path %} active {% endif %}">
-                                                <i class="nav-icon fas fa-th"></i>
-                                                <p>
-                                                    Feedback
-
-                                                </p>
-                                            </a>
-                                        </li>
 
                                         {% endif %}
 

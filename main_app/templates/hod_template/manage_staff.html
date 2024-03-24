@@ -30,12 +30,12 @@
                                 {% for staff in allStaff %}
                                 <tr>
                                     <td>{{ forloop.counter }}</td>
-                                    <td>{{staff.last_name}}, {{staff.first_name}}</td>
+                                    <td>{{staff.first_name}} {{staff.last_name}}</td>
                                     <td>{{staff.email}}</td>
                                     <td>{{staff.gender}}</td>
                                     <td>{{staff.staff.course.name}}</td>
                                     <td>
-                                        {% if staff.profile_pic == ""  %}
+                                        {% if staff.profile_pic == "" %}
                                         No Image
                                         {% else %}
                                         <img class="img img-fluid mb-2" height="100" width="100"
@@ -43,9 +43,11 @@
                                         {% endif %}
                                     </td>
                                     <td>
-                                        <a href="{% url 'edit_staff' staff.staff.id %}" class="btn btn-primary">Edit</a> - 
-                                        <a href="{% url 'delete_staff' staff.staff.id %}" class="btn btn-danger" onclick="return confirm('Are you sure about this ?')">Delete</a>
-                                    
+                                        <a href="{% url 'edit_staff' staff.staff.id %}" class="btn btn-primary">Edit</a>
+                                        -
+                                        <a href="{% url 'delete_staff' staff.staff.id %}" class="btn btn-danger"
+                                            onclick="return confirm('Are you sure about this ?')">Delete</a>
+
                                     </td>
                                 </tr>
                                 {% endfor %}
