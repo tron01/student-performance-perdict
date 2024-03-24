@@ -213,7 +213,28 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                {% url 'staff_add_result' as staff_add_result %}
+                                <a href="{{staff_add_result}}"
+                                    class="nav-link {% if staff_add_result == request.path %} active {% endif %}">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Add Result
 
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                {% url 'edit_student_result' as edit_student_result %}
+                                <a href="{{edit_student_result}}"
+                                    class="nav-link {% if edit_student_result == request.path %} active {% endif %}">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Edit Result
+
+                                    </p>
+                                </a>
+                            </li>
 
                             <li class="nav-item">
                                 {% url 'staff_take_attendance' as staff_take_attendance %}
@@ -292,6 +313,16 @@
                                         </li>
 
 
+                                        <li class="nav-item">
+                                            {% url 'student_view_result' as student_view_result %}
+                                            <a href="{% url 'student_view_result' %}"
+                                                class="nav-link {% if student_view_result == request.path %} active {% endif %}">
+                                                <i class="nav-icon fas fa-th"></i>
+                                                <p>
+                                                    View Results
+                                                </p>
+                                            </a>
+                                        </li>
                                         <li class="nav-item">
                                             {% url 'student_view_attendance' as student_view_attendance %}
                                             <a href="{{student_view_attendance}}"
