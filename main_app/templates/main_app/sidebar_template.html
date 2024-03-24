@@ -267,7 +267,7 @@
                             </li>
                             <li class="nav-item">
                                 {% url 'staff_view_notification' as staff_view_notification %}
-                                <a href="{{staff_view_notification}}"
+                                <a href=""
                                     class="nav-link {% if staff_view_notification == request.path %} active {% endif %}">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
@@ -279,7 +279,7 @@
 
                             <li class="nav-item">
                                 {% url 'staff_apply_leave' as staff_apply_leave %}
-                                <a href="{{staff_apply_leave}}"
+                                <a href=""
                                     class="nav-link {% if staff_apply_leave == request.path %} active {% endif %}">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
@@ -291,8 +291,7 @@
 
                             <li class="nav-item">
                                 {% url 'staff_feedback' as staff_feedback %}
-                                <a href="{{staff_feedback}}"
-                                    class="nav-link {% if staff_feedback == request.path %} active {% endif %}">
+                                <a href="" class="nav-link {% if staff_feedback == request.path %} active {% endif %}">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
                                         Feedback
