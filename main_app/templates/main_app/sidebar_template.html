@@ -294,21 +294,29 @@
                                     </p>
                                 </a>
                             </li>
-
                             <li class="nav-item">
-                                {% url 'staff_take_attendance' as staff_take_attendance %}
-                                <a href="{{staff_take_attendance}}"
-                                    class="nav-link {% if staff_take_attendance == request.path %} active {% endif %}">
+                                {% url 'staff_view_notification' as staff_view_notification %}
+                                <a href="{{staff_view_notification}}"
+                                    class="nav-link {% if staff_view_notification == request.path %} active {% endif %}">
                                     <i class="nav-icon fas fa-th"></i>
                                     <p>
-                                        Predict student Per
+                                        View Notifications
 
                                     </p>
                                 </a>
                             </li>
 
+                            <li class="nav-item">
+                                {% url 'staff_feedback' as staff_feedback %}
+                                <a href="{{staff_feedback}}"
+                                    class="nav-link {% if staff_feedback == request.path %} active {% endif %}">
+                                    <i class="nav-icon fas fa-th"></i>
+                                    <p>
+                                        Feedback
 
-
+                                    </p>
+                                </a>
+                            </li>
 
                             {% else %}
                             <!-- Brand Logo -->
@@ -380,6 +388,41 @@
                                                 <p>View Attendance</p>
                                             </a>
                                         </li>
+
+                                        <li class="nav-item">
+                                            {% url 'student_view_attendance' as student_view_attendance %}
+                                            <a href="{{student_view_attendance}}"
+                                                class="nav-link {% if student_view_attendance == request.path %} active {% endif %}">
+                                                <i class="nav-icon fas fa-th"></i>
+                                                <p>Perdict The performance</p>
+                                            </a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            {% url 'student_view_notification' as student_view_notification %}
+                                            <a href="{{student_view_notification}}"
+                                                class="nav-link {% if student_view_notification == request.path %} active {% endif %}">
+                                                <i class="nav-icon fas fa-th"></i>
+                                                <p>
+                                                    View Notifications
+
+                                                </p>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="nav-item">
+                                            {% url 'student_feedback' as student_feedback %}
+                                            <a href="{{student_feedback}}"
+                                                class="nav-link {% if student_feedback == request.path %} active {% endif %}">
+                                                <i class="nav-icon fas fa-th"></i>
+                                                <p>
+                                                    Feedback
+
+                                                </p>
+                                            </a>
+                                        </li>
+
 
 
 
