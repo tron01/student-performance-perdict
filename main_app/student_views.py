@@ -274,7 +274,6 @@ def student_perdict(request):
 
         context1 = {
             'page_title': 'Student Performance prediction',
-            'result': 'result',
             'msg':'Result:'+msg,
         }
         return render(request, 'student_template/student_perdict.html', context1)
