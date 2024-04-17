@@ -390,9 +390,9 @@
                                         </li>
 
                                         <li class="nav-item">
-                                            {% url 'student_view_attendance' as student_view_attendance %}
-                                            <a href="{{student_view_attendance}}"
-                                                class="nav-link {% if student_view_attendance == request.path %} active {% endif %}">
+                                            {% url 'student_perdict' as student_perdict %}
+                                            <a href="{{student_perdict}}"
+                                                class="nav-link {% if student_perdict == request.path %} active {% endif %}">
                                                 <i class="nav-icon fas fa-th"></i>
                                                 <p>Perdict The performance</p>
                                             </a>

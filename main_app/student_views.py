@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from .forms import *
 from .models import *
+import pickle   
 
 
 def student_home(request):
@@ -205,3 +206,73 @@ def student_view_result(request):
         'page_title': "View Results"
     }
     return render(request, "student_template/student_view_result.html", context)
+
+
+
+
+@ csrf_exempt
+def student_perdict(request):
+    if request.method != 'POST':
+        context = {
+            'page_title': 'Student Performance prediction',
+        }
+        return render(request, 'student_template/student_perdict.html', context)
+    else:
+        filepath = r'D:\Projects\DjangoProjects\student-management-using-django-main\main_app\ML_model\LinearRegression.pkl'
+            
+        with open(filepath, 'rb') as f:
+            loaded_model = pickle.load(f)
+
+        hour_stud = request.POST.get('Hours_Studied')
+        prev_score = request.POST.get('Previous_Scores')
+        sleep_hour = request.POST.get('Sleep_Hours')
+        Extra_act = request.POST.get('Extra_act')
+        sample_qp_ans = request.POST.get('spq_Practiced')
+        print("______________________")
+        print(hour_stud)
+        print(prev_score)
+        print(sleep_hour)
+        print(Extra_act)
+        print(sample_qp_ans)
+
+        converted_num_hour_stud = int(hour_stud)
+        converted_num_prev_score = int(prev_score)
+        converted_num_sleep_hour = int(sleep_hour)
+        converted_num_Extra_act = int(Extra_act)
+        converted_num_sample_qp_ans = int(sample_qp_ans)
+
+        print("______________________")
+        # Prepare input data for prediction
+        input_data = [[converted_num_hour_stud, converted_num_prev_score, converted_num_sleep_hour, converted_num_Extra_act, converted_num_sample_qp_ans]]
+
+        # Make prediction using the loaded model
+        prediction = loaded_model.predict(input_data)
+        p =int(prediction[0])
+        print("______________________")
+        print(p)
+        print("______________________")
+        msg=""
+        
+        if(p>=80):
+            print("You got A grade")
+            msg="You got A grade"
+        elif(p>=60):
+            print("You got B grade")
+            msg="You got B grade"
+        elif(p>=40):
+            print("You got C grade")
+            msg="You got C grade"
+        else:
+            print("Failed in this Exam ")
+            msg="Failed in this Exam "
+        
+        
+           
+            
+
+        context1 = {
+            'page_title': 'Student Performance prediction',
+            'result': 'result',
+            'msg':msg,
+        }
+        return render(request, 'student_template/student_perdict.html', context1)
