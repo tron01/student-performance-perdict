@@ -109,10 +109,10 @@
 <script>
   $(document).ready(function () {
     var donutData = {
-      labels: ['Attendance', 'Subjects'],
+      labels: ['Attendance', 'Leave'],
       datasets: [
         {
-          data: [{{ total_attendance }}, {{ total_subject }}],
+          data: [{{ total_attendance }}, {{ total_leave }}],
       backgroundColor: ['#00a65a', '#f39c12',],
   }
             ]
@@ -176,7 +176,9 @@
     options: stackedBarChartOptions
   })
       })
+    }
 
 
 </script>
+
 {% endblock custom_js %}
