@@ -264,10 +264,13 @@ def student_perdict(request):
         elif(p>=40):
             print("You got C grade")
             msg="You got C grade"
+        elif(p>=25):
+            print("You got P grade")
+            msg="You got P grade"
         else:
             print("Failed in this Exam ")
             msg="Failed in this Exam "
-      
+            
 
         context1 = {
             'page_title': 'Student Performance prediction',
