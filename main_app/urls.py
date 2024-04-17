@@ -86,8 +86,7 @@ urlpatterns = [
 
     # Staff
     path("staff/home/", staff_views.staff_home, name='staff_home'),
-    path("staff/apply/leave/", staff_views.staff_apply_leave,
-         name='staff_apply_leave'),
+   
     path("staff/feedback/", staff_views.staff_feedback, name='staff_feedback'),
     path("staff/view/profile/", staff_views.staff_view_profile,
          name='staff_view_profile'),
@@ -117,8 +116,6 @@ urlpatterns = [
     path("student/home/", student_views.student_home, name='student_home'),
     path("student/view/attendance/", student_views.student_view_attendance,
          name='student_view_attendance'),
-    path("student/apply/leave/", student_views.student_apply_leave,
-         name='student_apply_leave'),
     path("student/feedback/", student_views.student_feedback,
          name='student_feedback'),
     path("student/view/profile/", student_views.student_view_profile,
