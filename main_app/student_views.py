@@ -212,14 +212,16 @@ def student_view_result(request):
 
 @ csrf_exempt
 def student_perdict(request):
+    msg=""
     if request.method != 'POST':
         context = {
             'page_title': 'Student Performance prediction',
         }
+        msg=""
         return render(request, 'student_template/student_perdict.html', context)
     else:
         filepath = r'D:\Projects\DjangoProjects\student-management-using-django-main\main_app\ML_model\LinearRegression.pkl'
-            
+        msg=""  
         with open(filepath, 'rb') as f:
             loaded_model = pickle.load(f)
 
@@ -265,14 +267,11 @@ def student_perdict(request):
         else:
             print("Failed in this Exam ")
             msg="Failed in this Exam "
-        
-        
-           
-            
+      
 
         context1 = {
             'page_title': 'Student Performance prediction',
             'result': 'result',
-            'msg':msg,
+            'msg':'Result:'+msg,
         }
         return render(request, 'student_template/student_perdict.html', context1)
